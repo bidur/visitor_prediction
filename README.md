@@ -1,5 +1,5 @@
 # visitor_prediction
-Okinawa data visitor prediction
+Okinawa data visitor prediction: Please provide your data to data/ directory.
 
 1. Data Preparation (1_prepare_data.ipynb)
 
