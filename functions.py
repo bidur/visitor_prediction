@@ -82,6 +82,12 @@ def prepare_trip_summary(df):# summarize each trip
             lon_prevs = lon_max
 
             if ( trip_count_prevs  == trip_count-1):
+                
+                if min_ts.date() != ts_prevs.date():
+                    trip_count_prevs = trip_count
+                    ts_prevs = max_ts
+                    #print ('SKIP: ', min_ts,ts_prevs)                    
+                    continue
 
                 arr_trip_summary.append({
                     'ap_id': ap_id,
@@ -146,3 +152,4 @@ def merge_consecutive_trips_in_single_day(trip_df, threshold_in_sec):
     #df_final.to_csv(final_csv, index=False) 
     
     return df_final
+
